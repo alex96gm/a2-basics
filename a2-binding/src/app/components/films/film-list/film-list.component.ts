@@ -10,17 +10,13 @@ import { Component } from '@angular/core';
 export class FilmListComponent {
   films: Array<Film> = filmsMock;
 
-  onDeleteFilm(event: Film):void{
+  onDeleteFilm(event: Film): void{
     this.films = this.films.filter(film => film !== event);
   }
 
-  // ocClickCreateFilm(): void {
-  //   this.films.push(this.filmToCreate);
-  //   this.filmToCreate = new Film();
-  // }
+  onClickCreateFilm(film: Film): void {
+    this.films.push(film);
+  }
 
-  // onChangePosterInput(poster: string): void {
-  //   this.posterPreview = poster;
-  // }
 
 }
