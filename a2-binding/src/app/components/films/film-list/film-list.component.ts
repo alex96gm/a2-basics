@@ -6,23 +6,21 @@ import { Component } from '@angular/core';
   selector: 'app-film-list',
   templateUrl: './film-list.component.html'
 })
+
 export class FilmListComponent {
   films: Array<Film> = filmsMock;
-  filmToCreate: Film = new Film();
-  posterPreview: string = '';
-  searchField: string = 'title';
 
-  onClickDeleteFilm(title: string): void {
-    this.films = this.films.filter(f => f.title !== title);
+  onDeleteFilm(event: Film):void{
+    this.films = this.films.filter(film => film !== event);
   }
 
-  ocClickCreateFilm(): void {
-    this.films.push(this.filmToCreate);
-    this.filmToCreate = new Film();
-  }
+  // ocClickCreateFilm(): void {
+  //   this.films.push(this.filmToCreate);
+  //   this.filmToCreate = new Film();
+  // }
 
-  onChangePosterInput(poster: string): void {
-    this.posterPreview = poster;
-  }
+  // onChangePosterInput(poster: string): void {
+  //   this.posterPreview = poster;
+  // }
 
 }
